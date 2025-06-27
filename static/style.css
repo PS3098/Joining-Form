@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  background-color: rgb(2, 47, 109);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Create flex sections */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  justify-content: center;
+}
+
+.navbar-left {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Push content below fixed navbar */
+body {
+  background-color: #f0f2f5;
+  padding-top: 70px; /* height of navbar + some gap */
+}
+
+/* 3D Card Style Section */
+/* Make form container wider */
+.form-section {
+  background-color: white;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Row layout */
+.form-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+/* Each column inside a row */
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Full-width rows */
+.full-width {
+  flex-direction: column;
+}
+
+/* Label and input styling */
+.form-section label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-section input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+select {
+  padding: 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  width: 100%;
+  background-color: white;
+  color: #555;
+  height: 40px;
+
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.family-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.family-table th,
+.family-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.family-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.family-table input,
+.family-table select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+

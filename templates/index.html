@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joining Form</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right">
+    
+    </div>
+  </div>
+
+  <!-- Form Section -->
+<div class="form-section">
+  <h3>Personal Details</h3><br>
+  <form>
+    <!-- Row 1: Name Fields -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name <span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="First name" required />
+      </div>
+      <div class="form-group">
+        <label for="middleName">Middle Name</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Middle name" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name <span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last name" required />
+      </div>
+    </div>
+
+    <!-- Row 2: Present Address + Photo Upload -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="presentAddress">Present Address</label>
+    <input type="text" id="presentAddress" name="presentAddress" placeholder="Enter your current address" />
+  </div>
+  <div class="form-group">
+    <label for="photoUpload1">Upload Photo <span class="file-note">(PDF, JPEG, PNG)</span><span class="required">*</span></label>
+    <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" />
+  </div>
+</div>
+
+<!-- Row 3: Permanent Address + Photo Upload -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="permanentAddress">Permanent Address</label>
+    <input type="text" id="permanentAddress" name="permanentAddress" placeholder="Enter your permanent address" />
+  </div>
+</div>
+
+    <!-- Row 4: Email ID -->
+    <div class="form-row full-width">
+      <label for="email">Email ID<span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+    </div>
+
+    <!-- Row 5: Hobbies -->
+    <div class="form-row full-width">
+      <label for="hobbies">Hobbies<span class="required">*</span></label>
+      <input type="text" id="hobbies" name="hobbies" placeholder="Enter your hobbies" required />
+    </div>
+
+   <!-- Row 6: Residential and Mobile Number -->
+    <div class="form-row">
+    <div class="form-group">
+        <label for="residentialNumber">Residential Number<span class="required">*</span></label>
+        <input type="tel" id="residentialNumber" name="residentialNumber" placeholder="Enter landline number" />
+    </div>
+    <div class="form-group">
+        <label for="mobileNumber">Mobile Number<span class="required">*</span></label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter mobile number" />
+    </div>
+    </div>
+
+   <!-- Row 7: Date of Birth + Place of Birth -->
+    <div class="form-row">
+    <div class="form-group">
+        <label for="dob">Date of Birth <span class="file-note">(DD/MM/YYYY)</span><span class="required">*</span></label>
+        <input type="date" id="dob" name="dob" required placeholder="DD/MM/YYYY"/>
+    </div>
+    <div class="form-group">
+        <label for="birthPlace">Place of Birth</label>
+        <input type="text" id="birthPlace" name="birthPlace" placeholder="Enter place of birth"/>
+    </div>
+    </div>
+
+    <!-- Row: Gender & Religion -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="religion">Religion</label>
+    <input type="text" id="religion" name="religion" placeholder="Enter religion" />
+  </div>
+</div>
+
+<!-- Row: Nationality & Blood Group -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="nationality">Nationality</label>
+    <input type="text" id="nationality" name="nationality" placeholder="Enter nationality" />
+  </div>
+
+  <div class="form-group">
+    <label for="bloodGroup">Blood Group</label>
+    <select id="bloodGroup" name="bloodGroup">
+      <option value="">Select Blood Group</option>
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+    </select>
+  </div>
+</div>
+
+<!-- Row: Marital Status & Date of Marriage -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="maritalStatus">Marital Status</label>
+    <select id="maritalStatus" name="maritalStatus">
+      <option value="">Select Marital Status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="marriageDate">Date of Marriage</label>
+    <input type="date" id="marriageDate" name="marriageDate" placeholder="DD/MM/YYYY" />
+  </div>
+</div>
+
+<!-- Row: Father's Name & Mother Tongue -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="fatherName">Father’s Name</label>
+    <input type="text" id="fatherName" name="fatherName" placeholder="Enter father's name" />
+  </div>
+
+  <div class="form-group">
+    <label for="motherTongue">Mother Tongue</label>
+    <input type="text" id="motherTongue" name="motherTongue" placeholder="Enter mother tongue" />
+  </div>
+</div>
+
+</form>
+</div>
+
+ <!-- Form Section -->
+<div class="form-section">
+  <h3>Language Proficiency</h3><br>
+  <form>
+    <!-- Row 1: Name Fields -->
+</form>
+</div>
+
+
+<!-- FAMILY DETAILS Section -->
+<div class="form-section">
+  <h3>Family Details</h3>
+  <div class="table-container">
+    <table class="family-table">
+      <thead>
+        <tr>
+          <th>Relationship</th>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Occupation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Each row represents one family member -->
+        <tr>
+          <td>Father</td>
+          <td><input type="text" name="fatherName" placeholder="Full Name" /></td>
+          <td><input type="date" name="fatherDOB" /></td>
+          <td>
+            <select name="fatherGender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="text" name="fatherOccupation" placeholder="Occupation" /></td>
+        </tr>
+
+        <tr>
+          <td>Mother</td>
+          <td><input type="text" name="motherName" placeholder="Full Name" /></td>
+          <td><input type="date" name="motherDOB" /></td>
+          <td>
+            <select name="motherGender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="text" name="motherOccupation" placeholder="Occupation" /></td>
+        </tr>
+
+        <tr>
+          <td>Spouse</td>
+          <td><input type="text" name="spouseName" placeholder="Full Name" /></td>
+          <td><input type="date" name="spouseDOB" /></td>
+          <td>
+            <select name="spouseGender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="text" name="spouseOccupation" placeholder="Occupation" /></td>
+        </tr>
+
+        <tr>
+          <td>Child 1</td>
+          <td><input type="text" name="child1Name" placeholder="Full Name" /></td>
+          <td><input type="date" name="child1DOB" /></td>
+          <td>
+            <select name="child1Gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="text" name="child1Occupation" placeholder="Occupation" /></td>
+        </tr>
+
+        <tr>
+          <td>Child 2</td>
+          <td><input type="text" name="child2Name" placeholder="Full Name" /></td>
+          <td><input type="date" name="child2DOB" /></td>
+          <td>
+            <select name="child2Gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="text" name="child2Occupation" placeholder="Occupation" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
+
+<!-- EMERGENCY CONTACT SECTION -->
+<div class="form-section">
+  <h3>Emergency Contact</h3><br>
+
+  <!-- Name -->
+  <div class="form-row full-width">
+    <div class="form-group">
+      <label for="emergencyName">Name</label>
+      <input type="text" id="emergencyName" name="emergencyName" placeholder="Enter full name" required />
+    </div>
+  </div>
+
+  <!-- Relationship and Phone Number -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="emergencyRelation">Relationship</label>
+      <input type="text" id="emergencyRelation" name="emergencyRelation" placeholder="e.g. Father, Friend" />
+    </div>
+
+    <div class="form-group">
+      <label for="emergencyPhone">Phone Number</label>
+      <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="Enter contact number" required />
+    </div>
+  </div>
+
+  <!-- Contact Address -->
+  <div class="form-row full-width">
+    <div class="form-group">
+      <label for="emergencyAddress">Contact Address</label>
+      <input type="text" id="emergencyAddress" name="emergencyAddress" placeholder="Enter address" />
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+
