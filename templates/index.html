@@ -24,7 +24,8 @@
   <!-- Form Section -->
 <div class="form-section">
   <h3>Personal Details</h3><br>
-  <form>
+  <form action="/next" method="POST">
+
     <!-- Row 1: Name Fields -->
     <div class="form-row">
       <div class="form-group">
@@ -313,7 +314,374 @@
   </div>
 </div>
 
+<!-- BANK ACCOUNT DETAILS -->
+<div class="form-section">
+  <h3>Bank Account Details</h3><br>
+
+  <div class="form-row full-width">
+    <div class="form-group">
+      <label for="accountName">Name as per Records</label>
+      <input type="text" id="accountName" name="accountName" placeholder="Enter full name on bank account" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="accountNumber">Bank Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter account number" />
+    </div>
+
+    <div class="form-group">
+      <label for="ifscCode">IFSC Code</label>
+      <input type="text" id="ifscCode" name="ifscCode" placeholder="Enter IFSC code" />
+    </div>
+  </div>
+
+  <div class="form-row full-width">
+    <div class="form-group">
+      <label for="branchAddress">Branch Address</label>
+      <input type="text" id="branchAddress" name="branchAddress" placeholder="Enter bank branch address" />
+    </div>
+  </div>
+</div>
+
+<!-- GOVT. ID DETAILS -->
+<div class="form-section">
+  <h3>Government ID Details <span style="color:red;">(* Mandatory)</span></h3><br>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="panNumber">PAN Card No <span style="color:red;">*</span></label>
+      <input type="text" id="panNumber" name="panNumber" placeholder="Enter PAN card number" required />
+    </div>
+
+    <div class="form-group">
+      <label for="aadharNumber">Aadhar Number <span style="color:red;">*</span></label>
+      <input type="text" id="aadharNumber" name="aadharNumber" placeholder="Enter Aadhar number" required />
+    </div>
+  </div>
+
+  <div class="form-row full-width">
+    <div class="form-group">
+      <label for="otherId">Any Other ID Proof (Driving License / Passport / Voter’s Card)</label>
+      <input type="text" id="otherId" name="otherId" placeholder="Enter alternate ID proof (optional)" />
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION DETAILS SECTION -->
+<div class="form-section">
+  <h3>Education Details (in Descending Order)</h3>
+  <div class="table-container">
+    <table class="education-table">
+      <thead>
+        <tr>
+          <th>Qualification</th>
+          <th>Specialisation</th>
+          <th>Institute / University</th>
+          <th>From (DD/MM/YY)</th>
+          <th>To (DD/MM/YY)</th>
+          <th>% / Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- PG -->
+        <tr>
+          <td>PG</td>
+          <td><input type="text" name="pgSpecialisation" /></td>
+          <td><input type="text" name="pgInstitute" /></td>
+          <td><input type="date" name="pgFrom" /></td>
+          <td><input type="date" name="pgTo" /></td>
+          <td><input type="text" name="pgGrade" /></td>
+        </tr>
+        <!-- Degree -->
+        <tr>
+          <td>Degree</td>
+          <td><input type="text" name="degreeSpecialisation" /></td>
+          <td><input type="text" name="degreeInstitute" /></td>
+          <td><input type="date" name="degreeFrom" /></td>
+          <td><input type="date" name="degreeTo" /></td>
+          <td><input type="text" name="degreeGrade" /></td>
+        </tr>
+        <!-- HSC -->
+        <tr>
+          <td>HSC</td>
+          <td><input type="text" name="hscSpecialisation" /></td>
+          <td><input type="text" name="hscInstitute" /></td>
+          <td><input type="date" name="hscFrom" /></td>
+          <td><input type="date" name="hscTo" /></td>
+          <td><input type="text" name="hscGrade" /></td>
+        </tr>
+        <!-- SSC -->
+        <tr>
+          <td>SSC</td>
+          <td><input type="text" name="sscSpecialisation" /></td>
+          <td><input type="text" name="sscInstitute" /></td>
+          <td><input type="date" name="sscFrom" /></td>
+          <td><input type="date" name="sscTo" /></td>
+          <td><input type="text" name="sscGrade" /></td>
+        </tr>
+        <!-- Diploma -->
+        <tr>
+          <td>Diploma</td>
+          <td><input type="text" name="diplomaSpecialisation" /></td>
+          <td><input type="text" name="diplomaInstitute" /></td>
+          <td><input type="date" name="diplomaFrom" /></td>
+          <td><input type="date" name="diplomaTo" /></td>
+          <td><input type="text" name="diplomaGrade" /></td>
+        </tr>
+        <!-- Others -->
+        <tr>
+          <td>Others</td>
+          <td><input type="text" name="otherSpecialisation" /></td>
+          <td><input type="text" name="otherInstitute" /></td>
+          <td><input type="date" name="otherFrom" /></td>
+          <td><input type="date" name="otherTo" /></td>
+          <td><input type="text" name="otherGrade" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- EMPLOYMENT DETAILS SECTION -->
+<div class="form-section">
+  <h3>Employment Details (in Descending Order)</h3>
+
+  <div class="table-container">
+    <table class="employment-table" id="employmentTable">
+      <thead>
+        <tr>
+          <th>Organisation</th>
+          <th>Designation</th>
+          <th>From</th>
+          <th>To</th>
+          <th>CTC</th>
+          <th>Reason for Leaving</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="organisation[]" /></td>
+          <td><input type="text" name="designation[]" /></td>
+          <td><input type="date" name="fromDate[]" /></td>
+          <td><input type="date" name="toDate[]" /></td>
+          <td><input type="text" name="ctc[]" /></td>
+          <td><input type="text" name="reason[]" /></td>
+          <td>
+            <button type="button" class="add-row" onclick="addEmploymentRow()">+</i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // ✅ Common Row Removal
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+  }
+
+  // ✅ EMPLOYMENT SECTION: Adds to employmentTable
+  function addEmploymentRow() {
+    const table = document.querySelector("#employmentTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="organisation[]" /></td>
+      <td><input type="text" name="designation[]" /></td>
+      <td><input type="date" name="fromDate[]" /></td>
+      <td><input type="date" name="toDate[]" /></td>
+      <td><input type="text" name="ctc[]" /></td>
+      <td><input type="text" name="reason[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+
+  // ✅ PROFESSIONAL REFERENCE SECTION: Adds to referenceTable
+  function addReferenceRow() {
+    const table = document.querySelector("#referenceTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="refName[]" /></td>
+      <td><input type="text" name="refOrg[]" /></td>
+      <td><input type="text" name="refDesignation[]" /></td>
+      <td><input type="text" name="refContact[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+
+  // ✅ RELATIVES SECTION: Adds to relativesTable
+  function addRelativesRow() {
+    const table = document.querySelector("#relativesTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="relName[]" /></td>
+      <td><input type="text" name="relOrg[]" /></td>
+      <td><input type="text" name="relRelation[]" /></td>
+      <td><input type="text" name="relContact[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+</script>
+
+
+<!-- PROFESSIONAL REFERENCE SECTION -->
+<div class="form-section">
+  <h3>Professional Reference</h3>
+  <div class="table-container">
+    <table class="employment-table" id="referenceTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Organisation</th>
+          <th>Designation</th>
+          <th>Contact Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="refName[]" /></td>
+          <td><input type="text" name="refOrg[]" /></td>
+          <td><input type="text" name="refDesignation[]" /></td>
+          <td><input type="text" name="refContact[]" /></td>
+          <td>
+            <button type="button" class="add-row" onclick="addReferenceRow()">+
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- RELATIVES IN GROUP SECTION -->
+<div class="form-section">
+  <h3>Relatives in Group</h3>
+  <div class="table-container">
+    <table class="employment-table" id="relativesTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Organisation</th>
+          <th>Relationship</th>
+          <th>Contact</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="relName[]" /></td>
+          <td><input type="text" name="relOrg[]" /></td>
+          <td><input type="text" name="relRelation[]" /></td>
+          <td><input type="text" name="relContact[]" /></td>
+          <td>
+            <button type="button" class="add-row" onclick="addRelativesRow()">+
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- STRUCTURE OF TEAM SECTION -->
+<div class="form-section">
+  <h3>Structure of Your Team in Previous Organisation</h3><br>
+  <p>(Please mention names, designations & contact numbers)</p>
+
+  <div class="form-row full-width">
+    <textarea name="teamStructure" rows="5" placeholder="Write here..." class="expandable-textarea"></textarea>
+  </div>
+
+  <!-- Declaration Text -->
+  <p class="declaration-text">
+    <strong>DECLARATION:</strong> I hereby certify that the above information given by me is correct. I shall be liable in case any information furnished by me is found false or incorrect. The management may take any action against me as deemed fit including termination of my services.
+  </p><br>
+
+  <!-- Date, Place, Signature -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="declarationDate">Date:</label>
+      <input type="date" id="declarationDate" name="declarationDate" />
+    </div>
+
+    <div class="form-group">
+      <label for="declarationPlace">Place:</label>
+      <input type="text" id="declarationPlace" name="declarationPlace" placeholder="Enter place" />
+    </div>
+
+    <div class="form-group">
+      <label for="applicantSignature">Signature of Applicant:</label>
+      <input type="text" id="applicantSignature" name="applicantSignature" placeholder="Type full name as signature" />
+    </div>
+  </div>
+</div>
+
+<!-- GROUP TERM LIFE INSURANCE COVER SECTION -->
+<div class="form-section">
+  <h3>Group Term Life Insurance Cover <span style="font-size: 0.9rem; font-weight: normal;">(For Employees Only)</span></h3>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="empNumber">Emp No.</label>
+      <input type="text" id="empNumber" name="empNumber" placeholder="Enter employee number" />
+    </div>
+
+    <div class="form-group">
+      <label for="empName">Name</label>
+      <input type="text" id="empName" name="empName" placeholder="Enter full name" />
+    </div>
+
+    <div class="form-group">
+      <label for="empAge">Age</label>
+      <input type="number" id="empAge" name="empAge" placeholder="Enter age" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="empGrade">Grade</label>
+      <input type="text" id="empGrade" name="empGrade" placeholder="Enter grade" />
+    </div>
+
+    <div class="form-group">
+      <label for="empDOJ">Date of Joining</label>
+      <input type="date" id="empDOJ" name="empDOJ" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="empSignature">Signature</label>
+      <input type="text" id="empSignature" name="empSignature" placeholder="Employee signature" />
+    </div>
+
+    <div class="form-group">
+      <label for="personnel">Personnel Department</label>
+      <input type="text" id="personnel" name="personnel" placeholder="Personnel department signature/remarks" />
+    </div>
+
+    <div class="form-group">
+      <label for="insuranceDate">Date</label>
+      <input type="date" id="insuranceDate" name="insuranceDate" />
+    </div>
+  </div>
+</div>
+
+<div class="form-buttons">
+  <button type="submit" class="submit-btn">Save and Next</button>
+  <button type="reset" class="clear-btn">Clear</button>
+</div>
+
+
 
 </body>
 </html>
+
 

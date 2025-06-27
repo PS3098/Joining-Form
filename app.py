@@ -41,5 +41,28 @@ def index():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
+
+from flask import Flask, render_template, request, redirect, url_for
+import sqlite3  # or use your preferred DB
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@app.route('/next', methods=['POST'])
+def next_page():
+    # Example: Save form data logic (optional)
+    # Extract form values like request.form['firstName'] etc.
+    # Save to database here...
+
+    # Redirect to new page
+    return redirect(url_for('new_page'))
+
+@app.route('/new-page')
+def new_page():
+    return render_template('new_page.html')  # Make sure this file exists
 
