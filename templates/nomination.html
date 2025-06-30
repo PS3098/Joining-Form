@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomination Form</title>
+  <link rel="stylesheet" href="nomination.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right"></div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h3>Nomination Form</h3><br>
+
+    <div class="sub-heading">Under Group Term Life Insurance Cover</div><br>
+
+    <p>
+      <strong>To</strong><br>
+      Team1 Consulting Pvt Ltd<br>
+      4th floor, A-31,<br>
+      Sector - 3<br>
+      Noida, (U.P.) - 201301
+    </p>
+
+    <p>
+      <strong>Dear Sir,</strong><br><br>
+
+      I, Shri / Shrimati / Kumari <input type="text" class="inline-input" placeholder="Enter your name" />&nbsp; , an employee of Team1 Consulting Private Limited, hereby nominate the person(s) mentioned below to receive the amount secured Group Term Life Insurance and direct that the said amount 
+      shall be paid to my nominee(s), as the case may be, as per my directions given herein. I agree that payment of the amount by the said policy to the nominee(s) in accordance with my directions contained in this letter of nomination, shall constitute a full discharge to Team1 Consulting Private Limited, of its liability in respect of the amount secured by the said policy and it shall be binding on me and my heir(s) and representative(s). The nomination shall be in force until revoked by me in writing or varied by subsequent nomination(s) and communicated to you.
+    </p><br>
+
+    <!-- Signature field -->
+    <div class="form-group">
+    <label for="signUpload2">Signature <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="signUpload1" name="signUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 400px"/>
+    </div>
+  
+<!-- NOMINEE DETAILS SECTION -->
+  <br>
+  <h3>Nominee Details</h3>
+
+  <div class="table-container">
+    <table class="employment-table" id="nomineeTable" >
+      <thead>
+        <tr>
+          <th>Name and Address of Nominee</th>
+          <th>Relationship with Employee</th>
+          <th>DOB of Nominee</th>
+          <th>Share (%)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="NameAndAddress[]" placeholder="Enter nominee name"/></td>
+          <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+          <td><input type="date" name="Age[]" placeholder="Enter nominee DOB"/></td>
+          <td><input type="text" name="Share[]" placeholder="Enter share percentage"/></td>
+          <td>
+            <button type="button" class="add-row" onclick="addNomineeRow()">+</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<!-- SIGNATURE & WITNESSES SECTION -->
+  <br><br>
+  <h3>Declaration</h3>
+
+  <div class="signature-date-row" style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+    <label for="signed-at">Signed at</label>
+    <input type="text" id="signed-at" name="signedAt" placeholder="Enter place" style="flex: 0.5; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+
+    <label for="sign-day">this day of</label>
+    <input type="text" id="sign-day" name="signDay" placeholder="Date" style="width: 100px; padding: 6px; border-radius: 6px; border: 1px solid #ccc;">
+
+    <label>20</label>
+    <input type="text" id="sign-year" name="signYear" placeholder="Year" style="width: 80px; padding: 6px; border-radius: 6px; border: 1px solid #ccc;">
+  </div>
+
+  <div style="margin-bottom: 30px;">
+    <div class="form-group">
+    <label for="signUpload2">Signature <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="signUpload2" name="signUpload2" accept=".pdf, .jpg, .jpeg, .png" style="width: 400px"/>
+    </div>
+
+  <br><br>
+  <h4>Witnesses:</h4>
+  <br>
+  <!-- Witness 1 -->
+  <div style="margin-bottom: 20px;">
+    <label>Name:</label>
+    <input type="text" name="witness1Name" placeholder="Witness 1 Name" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;"><br><br>
+
+    <label>Address:</label>
+    <input type="text" name="witness1Address" placeholder="Witness 1 Address" style="width: 50%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;"><br><br>
+
+    <label>Signature:</label>
+    <input type="text" name="witness1Signature" placeholder="Witness 1 Signature" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+  </div>
+
+  <!-- Witness 2 -->
+  <div style="margin-bottom: 20px;">
+    <label>Name:</label>
+    <input type="text" name="witness2Name" placeholder="Witness 2 Name" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;"><br><br>
+
+    <label>Address:</label>
+    <input type="text" name="witness2Address" placeholder="Witness 2 Address" style="width: 50%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;"><br><br>
+
+    <label>Signature:</label>
+    <input type="text" name="witness2Signature" placeholder="Witness 2 Signature" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+  </div>
+
+
+<!-- DECLARATION BY APPLICANT -->
+
+  <h3>I) Declaration by Applicant:</h3>
+  <p style="margin-top: 10px; font-size: 1rem;">
+    I hereby certify that the above information given by me is correct. In case it is found false or untrue, I am liable to such action as the management may deem fit including termination of services.
+  </p>
+
+  <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; width: 200px;">
+    <div class="form-group">
+    <label for="signUpload2">Signature <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="signUpload2" name="signUpload2" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;"/>
+    </div>
+    </div>
+    
+    
+
+    <div style="flex: 1; min-width: 500px; margin-top: 15px;">
+      
+      <label for="applicantDate">Date:</label>
+      <input type="date" id="applicantDate" name="applicantDate" style="width: 30%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+    </div>
+  </div>
+
+<script>
+  // Remove a row
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+  }
+
+  // Add a Nominee row
+  function addNomineeRow() {
+    const table = document.querySelector("#nomineeTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="NameAndAddress[]" /></td>
+      <td><input type="text" name="Relationship[]" /></td>
+      <td><input type="date" name="Age[]" /></td>
+      <td><input type="text" name="Share[]" /></td>
+      <td>
+        <button type="button" class="remove-row" onclick="removeRow(this)">-</button>
+      </td>
+    `;
+    table.appendChild(newRow);
+  }
+</script>
+
+</div>
+</div>
+<div class="form-buttons">
+  <a href="new.html">
+    <button type="button" class="back-btn">Back</button>
+  </a>
+  <button type="submit" class="submit-btn">Save and Next</button>
+</div>
+
+</body>
+</html>
+

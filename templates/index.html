@@ -24,7 +24,8 @@
   <!-- Form Section -->
 <div class="form-section">
   <h3>Personal Details</h3><br>
-  <form action="/next" method="POST">
+  <form method="POST" action="/">
+
 
     <!-- Row 1: Name Fields -->
     <div class="form-row">
@@ -98,7 +99,7 @@
     </div>
     </div>
 
-    <!-- Row: Gender & Religion -->
+    <!-- Row 8: Gender & Religion -->
 <div class="form-row">
   <div class="form-group">
     <label for="gender">Gender</label>
@@ -116,7 +117,7 @@
   </div>
 </div>
 
-<!-- Row: Nationality & Blood Group -->
+<!-- Row 9: Nationality & Blood Group -->
 <div class="form-row">
   <div class="form-group">
     <label for="nationality">Nationality</label>
@@ -139,7 +140,7 @@
   </div>
 </div>
 
-<!-- Row: Marital Status & Date of Marriage -->
+<!-- Row 10: Marital Status & Date of Marriage -->
 <div class="form-row">
   <div class="form-group">
     <label for="maritalStatus">Marital Status</label>
@@ -158,7 +159,7 @@
   </div>
 </div>
 
-<!-- Row: Father's Name & Mother Tongue -->
+<!-- Row 11: Father's Name & Mother Tongue -->
 <div class="form-row">
   <div class="form-group">
     <label for="fatherName">Father’s Name</label>
@@ -198,7 +199,6 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Each row represents one family member -->
         <tr>
           <td>Father</td>
           <td><input type="text" name="fatherName" placeholder="Full Name" /></td>
@@ -385,7 +385,6 @@
         </tr>
       </thead>
       <tbody>
-        <!-- PG -->
         <tr>
           <td>PG</td>
           <td><input type="text" name="pgSpecialisation" /></td>
@@ -394,7 +393,7 @@
           <td><input type="date" name="pgTo" /></td>
           <td><input type="text" name="pgGrade" /></td>
         </tr>
-        <!-- Degree -->
+
         <tr>
           <td>Degree</td>
           <td><input type="text" name="degreeSpecialisation" /></td>
@@ -403,7 +402,6 @@
           <td><input type="date" name="degreeTo" /></td>
           <td><input type="text" name="degreeGrade" /></td>
         </tr>
-        <!-- HSC -->
         <tr>
           <td>HSC</td>
           <td><input type="text" name="hscSpecialisation" /></td>
@@ -412,7 +410,6 @@
           <td><input type="date" name="hscTo" /></td>
           <td><input type="text" name="hscGrade" /></td>
         </tr>
-        <!-- SSC -->
         <tr>
           <td>SSC</td>
           <td><input type="text" name="sscSpecialisation" /></td>
@@ -421,7 +418,6 @@
           <td><input type="date" name="sscTo" /></td>
           <td><input type="text" name="sscGrade" /></td>
         </tr>
-        <!-- Diploma -->
         <tr>
           <td>Diploma</td>
           <td><input type="text" name="diplomaSpecialisation" /></td>
@@ -430,7 +426,6 @@
           <td><input type="date" name="diplomaTo" /></td>
           <td><input type="text" name="diplomaGrade" /></td>
         </tr>
-        <!-- Others -->
         <tr>
           <td>Others</td>
           <td><input type="text" name="otherSpecialisation" /></td>
@@ -478,13 +473,13 @@
 </div>
 
 <script>
-  // ✅ Common Row Removal
+  // Common Row Removal
   function removeRow(button) {
     const row = button.closest("tr");
     row.remove();
   }
 
-  // ✅ EMPLOYMENT SECTION: Adds to employmentTable
+  // EMPLOYMENT SECTION: Adds to employmentTable
   function addEmploymentRow() {
     const table = document.querySelector("#employmentTable tbody");
     const newRow = document.createElement("tr");
@@ -500,7 +495,7 @@
     table.appendChild(newRow);
   }
 
-  // ✅ PROFESSIONAL REFERENCE SECTION: Adds to referenceTable
+  // PROFESSIONAL REFERENCE SECTION: Adds to referenceTable
   function addReferenceRow() {
     const table = document.querySelector("#referenceTable tbody");
     const newRow = document.createElement("tr");
@@ -514,7 +509,7 @@
     table.appendChild(newRow);
   }
 
-  // ✅ RELATIVES SECTION: Adds to relativesTable
+  // RELATIVES SECTION: Adds to relativesTable
   function addRelativesRow() {
     const table = document.querySelector("#relativesTable tbody");
     const newRow = document.createElement("tr");
@@ -599,12 +594,10 @@
     <textarea name="teamStructure" rows="5" placeholder="Write here..." class="expandable-textarea"></textarea>
   </div>
 
-  <!-- Declaration Text -->
   <p class="declaration-text">
     <strong>DECLARATION:</strong> I hereby certify that the above information given by me is correct. I shall be liable in case any information furnished by me is found false or incorrect. The management may take any action against me as deemed fit including termination of my services.
   </p><br>
 
-  <!-- Date, Place, Signature -->
   <div class="form-row">
     <div class="form-group">
       <label for="declarationDate">Date:</label>
@@ -617,9 +610,9 @@
     </div>
 
     <div class="form-group">
-      <label for="applicantSignature">Signature of Applicant:</label>
-      <input type="text" id="applicantSignature" name="applicantSignature" placeholder="Type full name as signature" />
-    </div>
+    <label for="signUpload1">Signature of Applicant<span class="file-note"> (pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" />
+  </div>
   </div>
 </div>
 
@@ -658,9 +651,9 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="empSignature">Signature</label>
-      <input type="text" id="empSignature" name="empSignature" placeholder="Employee signature" />
-    </div>
+    <label for="signUpload2">Signature <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" />
+  </div>
 
     <div class="form-group">
       <label for="personnel">Personnel Department</label>
@@ -675,13 +668,11 @@
 </div>
 
 <div class="form-buttons">
+  <a href="nomination.html">
   <button type="submit" class="submit-btn">Save and Next</button>
+</a>
   <button type="reset" class="clear-btn">Clear</button>
 </div>
 
-
-
 </body>
 </html>
-
-
