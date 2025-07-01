@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomination and Declaration</title>
+  <link rel="stylesheet" href="static/declaration.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right"></div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h3>NOMINATION AND DECLARATION FORM FOR UNEXEMPTED/EXEMPTED ESTABLISHMENTS</h3><br>
+
+    <div class="sub-heading"><center>Declaration and Nomination Form under the Employees Provident Funds and Employees Pension Schemes
+(Paragraph 33 and 61 (1) of the Employees Provident Fund Scheme 1952 and Paragraph 18 of the Employees Pension Scheme 1995)</center>
+</div><br><br>
+
+    <!-- Row 1: Name Fields -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name <span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="First name" required />
+      </div>
+      <div class="form-group">
+        <label for="middleName">Middle Name</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Middle name" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name <span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last name" required />
+      </div>
+    </div>
+
+        <div class="form-row">
+    <div class="form-group">
+        <label for="dob">Date of Birth <span class="file-note">(DD/MM/YYYY)</span><span class="required">*</span></label>
+        <input type="date" id="dob" name="dob" required placeholder="DD/MM/YYYY"/>
+    </div>
+    <div class="form-group">
+        <label for="birthPlace">Account Number</label>
+        <input type="text" id="birthPlace" name="birthPlace" placeholder="Enter account number"/>
+    </div>
+    </div>
+
+<!-- Row 8: Gender & Marital Status -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="maritalStatus">Marital Status</label>
+    <select id="maritalStatus" name="maritalStatus">
+      <option value="">Select Marital Status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="Address">Address</label>
+    <input type="text" id="Address" name="Address" placeholder="Enter your current address" /><br>
+  </div>
+</div>
+<div class = "form-row">
+     <h3 class="center-text"><strong>PART - A (EPF)</strong></h3>
+</div>
+
+<div class = "form-row">
+     <p class="declaration-text">
+    I hereby nominate the person(s)/cancel the nomination made by me previously and nominate the person(s) mentioned below to receive the amount standing to my credit in the Employees Provident Fund, in the event of my death.
+  </p><br>
+</div>
+
+
+<div class="table-container">
+    <table class="nominee-table" id="nomineeTable" >
+      <thead>
+        <tr>
+          <th>Name of the Nominee</th>
+          <th>Address</th>
+          <th>Relationship with Employee</th>
+          <th>Date of Birth</th>
+          <th>Total Amount of share accumulations in Provident Funds to be paid to each other</th>
+          <th>If nominee is minor, name and address of guardian who may receive the amount during the minority of nominee</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="Name[]" placeholder="Enter nominee name"/></td>
+          <td><input type="date" name="Address[]" placeholder="Enter nominee address"/></td>
+          <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+          <td><input type="date" name="DOB[]" placeholder="Enter nominee DOB"/></td>
+          <td><input type="text" name="Share[]" placeholder="Enter share percentage"/></td>
+          <td><input type="text" name="[]" placeholder="Enter minor details"/></td>
+          <td>
+            <button type="button" class="add-row" onclick="addNomineeRow()">+</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<br>
+<div class="form-row">
+  <label>
+    <input type="checkbox" name="certify_no_family" required>
+    Certified that I have no family as defined in para 2 (g) of the Employees Provident Fund Scheme 1952 and should I acquire a family hereafter the above nomination should be deemed as cancelled.
+  </label>
+</div>
+
+<div class="form-row">
+  <label>
+    <input type="checkbox" name="certify_parents_dependent" required>
+    Certified that my father/mother is/are dependent upon me.
+  </label>
+</div>
+
+ <div class="form-group">
+    <label for="signUpload1">Signature of subscriber <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="signUpload1" name="signUpload2" accept=".pdf, .jpg, .jpeg, .png" style="width: 30%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;"/>
+    </div>
+
+    <div class = "form-row">
+     <h3 class="center-text"><strong>PART - B (EPS)</strong></h3>
+     </div>
+     <div class = "form-row">
+     <h4 class="center-text"><strong>Para 18</strong></h4>
+    </div>
+
+    <div class = "form-row">
+     <p class="declaration-text">
+        I hereby furnish below particulars of the members of my family who would be eligible to receive Widow/Children Pension in the event of my premature death in service.
+  </p><br>
+</div>
+    
+
+<div class="table-container">
+    <table class="member-table" id="memberTable" >
+      <thead>
+        <tr>
+          <th>Name of the Family Member</th>
+          <th>Address</th>
+          <th>Date of Birth</th>
+          <th>Relationship with Member</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="Name[]" placeholder="Enter member name"/></td>
+          <td><input type="text" name="Address[]" placeholder="Enter member address"/></td>
+          <td><input type="date" name="DOB[]" placeholder="Enter member DOB"/></td>
+          <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+          <td>
+            <button type="button" class="add-row" onclick="addMemberRow()">+</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<script>
+   // Common Row Removal
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+  }
+
+  // Add a Nominee row
+  function addNomineeRow() {
+    const table = document.querySelector("#nomineeTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+    <td><input type="text" name="Name[]" placeholder="Enter nominee name"/></td>
+    <td><input type="text" name="Address[]" placeholder="Enter nominee address"/></td>
+    <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+    <td><input type="date" name="DOB[]" placeholder="Enter nominee DOB"/></td>
+    <td><input type="text" name="Share[]" placeholder="Enter share percentage"/></td>
+    <td><input type="text" name="Minor[]" placeholder="Enter minor details"/></td>
+      <td>
+        <button type="button" class="remove-row" onclick="removeRow(this)">-</button>
+      </td>
+    `;
+    table.appendChild(newRow);
+  }
+
+  // Add member row
+    function addMemberRow() {
+    const table = document.querySelector("#membersTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+          <td><input type="text" name="Name[]" placeholder="Enter member name"/></td>
+          <td><input type="text" name="Address[]" placeholder="Enter member address"/></td>
+          <td><input type="date" name="DOB[]" placeholder="Enter member DOB"/></td>
+          <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+          <td>
+        <button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+</script>
+
+<div class="form-row">
+  <label>
+    <input type="checkbox" name="certify_no_family" required>
+    Certified that I have no family as defined in para 2 (vii) of the Employees's Family Pension Scheme 1995 and should I acquire a family hereafter I shall furnish Particulars there on in the above form.
+  </label>
+</div>
+<br>
+<div class="form-row">
+  <label>
+    <input type="checkbox" name="certify_parents_dependent" required>
+    I hereby nominate the following person for receiving the monthly widow pension (admissible under para 16 2 (a) (i) & (ii) in the  event of my death without leaving any eligible family member for receiving pension.
+  </label>
+</div>
+
+
+  <h3></h3>
+  <div class="table-container">
+    <table class="widow-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Date of Birth</th>
+          <th>Relationship with member</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="name" placeholder="Enter member name" /></td>
+          <td><input type="text" name="address" placeholder="Enter member address"/></td>
+          <td><input type="date" name="DOB" /></td>
+          <td><input type="text" name="relation" placeholder="Enter relation"/></td>
+        </tr>
+        </tr>
+      </tbody>
+    </table> 
+</div>
+
+
+
+  <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; width: 200px;">
+    <div class="form-group">
+    <label for="signUpload2">Signature <span class="file-note">(pdf, jpeg, png)</span><span class="required">*</span></label>
+    <input type="file" id="signUpload2" name="signUpload2" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;"/>
+    </div>
+    </div>
+    
+    
+
+    <div style="flex: 1; min-width: 500px; margin-top: 15px;">
+      
+      <label for="applicantDate">Date:</label>
+      <input type="date" id="applicantDate" name="applicantDate" style="width: 30%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+    </div>
+  </div>
+</div>
+
+  <!-- Form Section -->
+<div class="form-section">
+  <h3>Certificate by Employer</h3><br>
+  <form method="POST" action="/">
+
+
+    <!-- Row 1: Name Fields -->
+    <div class="form-row">
+    <p>
+      Certified that the above declaration and nomination has been  signed  /  thumb  impressed  before  me  by  Shri  /  Smt./ Miss <input type="text" class="inline-input" placeholder="Enter your name" style="width: 20%" />&nbsp; employed in my establishment after he/she has read the entries / the entries have been read over to him/her by me and got confirmed by him/her.
+    </p>
+    </div>
+    <br><br>
+<div class="form-row">
+  <div class="form-group">
+    <label for="Address">Name & Address of Factory/Establishment</label>
+    <input type="text" id="Address" name="presentAddress" placeholder="Enter company address"  style="width: 70%" />
+    </div>
+  <div class="form-group">
+    <label for="photoUpload1">Signature of employer<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+    <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 40%"/>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="Place">Place</label>
+    <input type="text" id="Address" name="place" placeholder="Enter place"  style="width: 50%" />
+    </div>
+  <div class="form-group">
+    <label for="Place">Date</label>
+    <input type="date" id="Date" name="date" style="width: 30%" />
+  </div>
+</div>
+
+</div>
+</div>
+<div class="form-buttons">
+  <a href="nomination.html">
+    <button type="button" class="back-btn">Back</button>
+  </a>
+  <button type="submit" class="submit-btn">Save and Next</button>
+</div>
+
+</body>
+</html>
