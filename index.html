@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joining Form</title>
-  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="style2.css" />
 </head>
 <body>
 
+ <form id="employeeForm">
   <!-- Navbar -->
   <div class="navbar">
     <div class="navbar-left">
@@ -24,14 +25,14 @@
   <!-- Form Section -->
 <div class="form-section">
   <h3>Personal Details</h3><br>
-  <form method="POST" action="/">
+  
 
 
     <!-- Row 1: Name Fields -->
     <div class="form-row">
       <div class="form-group">
         <label for="firstName">First Name <span class="required">*</span></label>
-        <input type="text" id="firstName" name="firstName" placeholder="First name" required />
+        <input type="text" id="firstName" name="firstName" placeholder="First name" required/>
       </div>
       <div class="form-group">
         <label for="middleName">Middle Name</label>
@@ -178,10 +179,50 @@
  <!-- Form Section -->
 <div class="form-section">
   <h3>Language Proficiency</h3><br>
-  <form>
     <!-- Row 1: Name Fields -->
-</form>
+     <div class="table-container">
+  <table class="employment-table" id="languageTable">
+    <thead>
+      <tr>
+        <th>Language Known</th>
+        <th>Read</th>
+        <th>Speak</th>
+        <th>Write</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="language[]" placeholder="Enter language" /></td>
+        <td style="text-align: center;"><input type="checkbox" name="read[]" /></td>
+        <td style="text-align: center;"><input type="checkbox" name="speak[]" /></td>
+        <td style="text-align: center;"><input type="checkbox" name="write[]" /></td>
+        <td>
+          <button type="button" class="add-row" onclick="addLanguageRow()">+</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+</div>
+
+<script>
+  function addLanguageRow() {
+    const table = document.querySelector("#languageTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="language[]" placeholder="Enter language" /></td>
+      <td style="text-align: center;"><input type="checkbox" name="read[]" /></td>
+      <td style="text-align: center;"><input type="checkbox" name="speak[]" /></td>
+      <td style="text-align: center;"><input type="checkbox" name="write[]" /></td>
+      <td>
+        <button type="button" class="remove-row" onclick="removeRow(this)">-</button>
+      </td>
+    `;
+    table.appendChild(newRow);
+  }
+</script>
 
 
 <!-- FAMILY DETAILS Section -->
@@ -351,20 +392,20 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="panNumber">PAN Card No <span style="color:red;">*</span></label>
+      <label for="panNumber">PAN Card No <span class="required">*</span></label>
       <input type="text" id="panNumber" name="panNumber" placeholder="Enter PAN card number" required />
     </div>
 
     <div class="form-group">
-      <label for="aadharNumber">Aadhar Number <span style="color:red;">*</span></label>
+      <label for="aadharNumber">Aadhar Number<span class="required">*</span></label>
       <input type="text" id="aadharNumber" name="aadharNumber" placeholder="Enter Aadhar number" required />
     </div>
   </div>
 
   <div class="form-row full-width">
     <div class="form-group">
-      <label for="otherId">Any Other ID Proof (Driving License / Passport / Voter’s Card)</label>
-      <input type="text" id="otherId" name="otherId" placeholder="Enter alternate ID proof (optional)" />
+      <label for="otherId">Any Other ID Proof (Driving License / Passport / Voter’s Card) <span class="required">*</label>
+      <input type="text" id="otherId" name="otherId" placeholder="Enter alternate ID proof (optional)" required />
     </div>
   </div>
 </div>
@@ -386,7 +427,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>PG</td>
+          <td>Postgraduation</td>
           <td><input type="text" name="pgSpecialisation" /></td>
           <td><input type="text" name="pgInstitute" /></td>
           <td><input type="date" name="pgFrom" /></td>
@@ -395,7 +436,7 @@
         </tr>
 
         <tr>
-          <td>Degree</td>
+          <td>Undergraduation</td>
           <td><input type="text" name="degreeSpecialisation" /></td>
           <td><input type="text" name="degreeInstitute" /></td>
           <td><input type="date" name="degreeFrom" /></td>
@@ -457,12 +498,12 @@
       </thead>
       <tbody>
         <tr>
-          <td><input type="text" name="organisation[]" /></td>
-          <td><input type="text" name="designation[]" /></td>
+          <td><input type="text" name="organisation[]" placeholder="Enter organization name"/></td>
+          <td><input type="text" name="designation[]" placeholder="Enter designation"/></td>
           <td><input type="date" name="fromDate[]" /></td>
           <td><input type="date" name="toDate[]" /></td>
-          <td><input type="text" name="ctc[]" /></td>
-          <td><input type="text" name="reason[]" /></td>
+          <td><input type="text" name="ctc[]" placeholder="Enter ctc"/></td>
+          <td><input type="text" name="reason[]" placeholder="Enter reason"/></td>
           <td>
             <button type="button" class="add-row" onclick="addEmploymentRow()">+</i></button>
           </td>
@@ -471,59 +512,6 @@
     </table>
   </div>
 </div>
-
-<script>
-  // Common Row Removal
-  function removeRow(button) {
-    const row = button.closest("tr");
-    row.remove();
-  }
-
-  // EMPLOYMENT SECTION: Adds to employmentTable
-  function addEmploymentRow() {
-    const table = document.querySelector("#employmentTable tbody");
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
-      <td><input type="text" name="organisation[]" /></td>
-      <td><input type="text" name="designation[]" /></td>
-      <td><input type="date" name="fromDate[]" /></td>
-      <td><input type="date" name="toDate[]" /></td>
-      <td><input type="text" name="ctc[]" /></td>
-      <td><input type="text" name="reason[]" /></td>
-      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
-    `;
-    table.appendChild(newRow);
-  }
-
-  // PROFESSIONAL REFERENCE SECTION: Adds to referenceTable
-  function addReferenceRow() {
-    const table = document.querySelector("#referenceTable tbody");
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
-      <td><input type="text" name="refName[]" /></td>
-      <td><input type="text" name="refOrg[]" /></td>
-      <td><input type="text" name="refDesignation[]" /></td>
-      <td><input type="text" name="refContact[]" /></td>
-      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
-    `;
-    table.appendChild(newRow);
-  }
-
-  // RELATIVES SECTION: Adds to relativesTable
-  function addRelativesRow() {
-    const table = document.querySelector("#relativesTable tbody");
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
-      <td><input type="text" name="relName[]" /></td>
-      <td><input type="text" name="relOrg[]" /></td>
-      <td><input type="text" name="relRelation[]" /></td>
-      <td><input type="text" name="relContact[]" /></td>
-      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
-    `;
-    table.appendChild(newRow);
-  }
-</script>
-
 
 <!-- PROFESSIONAL REFERENCE SECTION -->
 <div class="form-section">
@@ -598,6 +586,7 @@
     <strong>DECLARATION:</strong> I hereby certify that the above information given by me is correct. I shall be liable in case any information furnished by me is found false or incorrect. The management may take any action against me as deemed fit including termination of my services.
   </p><br>
 
+
   <div class="form-row">
     <div class="form-group">
       <label for="declarationDate">Date:</label>
@@ -669,11 +658,85 @@
 
 <div class="form-buttons">
   <button type="reset" class="clear-btn">Clear</button>
-  <a href="nomination.html">
+    <a href="nomination.html">
   <button type="submit" class="submit-btn">Save and Next</button>
-</a>
+  </a>
 </div>
 
+</form>
+<script>
+  // Common Row Removal
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+  }
+
+  // EMPLOYMENT SECTION: Adds to employmentTable
+  function addEmploymentRow() {
+    const table = document.querySelector("#employmentTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="organisation[]" /></td>
+      <td><input type="text" name="designation[]" /></td>
+      <td><input type="date" name="fromDate[]" /></td>
+      <td><input type="date" name="toDate[]" /></td>
+      <td><input type="text" name="ctc[]" /></td>
+      <td><input type="text" name="reason[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+
+  // PROFESSIONAL REFERENCE SECTION: Adds to referenceTable
+  function addReferenceRow() {
+    const table = document.querySelector("#referenceTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="refName[]" /></td>
+      <td><input type="text" name="refOrg[]" /></td>
+      <td><input type="text" name="refDesignation[]" /></td>
+      <td><input type="text" name="refContact[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+
+  // RELATIVES SECTION: Adds to relativesTable
+  function addRelativesRow() {
+    const table = document.querySelector("#relativesTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="relName[]" /></td>
+      <td><input type="text" name="relOrg[]" /></td>
+      <td><input type="text" name="relRelation[]" /></td>
+      <td><input type="text" name="relContact[]" /></td>
+      <td><button type="button" class="remove-row" onclick="removeRow(this)">-</button></td>
+    `;
+    table.appendChild(newRow);
+  }
+
+
+  document.getElementById("employeeForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch("http://localhost:8080/api/employees", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      // Optionally store returned ID in localStorage/sessionStorage
+      window.location.href = "nomination.html";
+    })
+    .catch(error => console.error("Error:", error));
+  });
+  </script>
 </body>
 </html>
 
