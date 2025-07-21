@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission</title>
+  <link rel="stylesheet" href="nomination.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right"></div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <form>
+    <h3>Form Submission Successful!</h3>
+    <br>
+    <p>Thank you for completing the form. Your submission has been successfully recorded.</p>
+</form>
+
+<script>
+document.getElementById("nominationForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  fetch("http://localhost:8080/api/employees", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    alert("Form submitted successfully!");
+    // Optionally redirect or show confirmation
+    window.location.href = "confirmation.html";
+  })
+  .catch(error => alert("Error submitting form: " + error));
+});
+</script>
+</body>
+</html>

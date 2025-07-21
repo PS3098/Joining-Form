@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment of Gratuity</title>
+  <link rel="stylesheet" href="nomination.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right"></div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h3>Payment of Gratuity</h3><br>
+    <form></form>
+
+    <div class="sub-heading">[SEE SUB-RULE (1) OF RULE 6]</div><br>
+    To <input type="text" class="inline-input" placeholder="Enter name" /> TEAM1 CONSULTING PRIVATE LIMITED <input type="text" class="inline-input" placeholder="Enter address of establishment" style="width: 400px;"/>.&nbsp; 
+    <br><br>
+    [Give here name or description of the establishment with full address]
+</p><br><br>
+
+  <div class = "form-row">
+  <div class="form-group">
+   <ol>
+    <li>Shri/Shrimati/Kumari <input type="text" class="inline-input" placeholder="Enter name" /> whose particulars are given in the statement below, hereby nominate the person(s) mentioned below to receive the gratuity payable after my death as also the gratuity standing to my credit in the event of my death before that amount has become payable, or having become payable has not been paid and direct that the said amount of gratuity shall be paid in proportion indicated against the name(s) of the nominee(s). </li><br>
+<li>I hereby certify that the person(s) mentioned is a/are member(s) of my family within the meaning of clause (h) of section (2) of the Payment of Gratuity Act, 1972.</li><br>
+<li>I hereby declare that I have no family within the meaning of clause (h) of section (2) of the said Act.</li><br>
+<li>     (a) My father/mother/parents is/are not dependent on me.</li><br>
+<li>     (b) My husband's father/mother/parents is/are not dependent on my husband.</li><br>
+<li>I have excluded my husband from my family by a notice dated the	to the Controlling
+authority in terms of the provision to clause (h) of section 2 of the said Act.</li><br>
+<li>Nomination made herein invalidates my previous nomination.</li><br>
+</ol>
+</div>
+</div>
+
+<br>
+  <h3>Nominee Details</h3>
+
+  <div class="table-container">
+    <table class="employment-table" id="nomineeTable" >
+      <thead>
+        <tr>
+          <th>Name and Address of Nominee</th>
+          <th>Relationship with Employee</th>
+          <th>DOB of Nominee</th>
+          <th>Share (%)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="NameAndAddress[]" placeholder="Enter nominee name"/></td>
+          <td><input type="text" name="Relationship[]" placeholder="Enter relation"/></td>
+          <td><input type="date" name="Age[]" placeholder="Enter nominee DOB"/></td>
+          <td><input type="text" name="Share[]" placeholder="Enter share percentage"/></td>
+          <td>
+            <button type="button" class="add-row" onclick="addNomineeRow()">+</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<br>
+  <script>
+  // Remove a row
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+  }
+
+  // Add a Nominee row
+  function addNomineeRow() {
+    const table = document.querySelector("#nomineeTable tbody");
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input type="text" name="NameAndAddress[]" /></td>
+      <td><input type="text" name="Relationship[]" /></td>
+      <td><input type="date" name="Age[]" /></td>
+      <td><input type="text" name="Share[]" /></td>
+      <td>
+        <button type="button" class="remove-row" onclick="removeRow(this)">-</button>
+      </td>
+    `;
+    table.appendChild(newRow);
+  }
+</script>
+
+<br>
+<center><h3>Statement</h3></center>
+<br>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name <span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="First name" required style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="middleName">Middle Name</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Middle name" style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name <span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last name" required style="width: 300px;"/>
+      </div>
+    </div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="gender">Sex</label>
+    <select id="gender" name="gender">
+      <option value="">Select Sex</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="religion">Religion</label>
+    <input type="text" id="religion" name="religion" placeholder="Enter religion" style="width: 600px;" />
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="maritalStatus">Marital Status</label>
+    <select id="maritalStatus" name="maritalStatus">
+      <option value="">Select Marital Status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="department">Department/Branch/Section where employed</label>
+    <input type="text" id="department" name="department" placeholder="Enter Department" style="width: 600px;"/>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="post">Post held with Ticket or Serial No. , if any</label>
+    <input type="text" id="post" name="post" style="width: 600px;"/>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date of appointment</label>
+    <input type="date" id="date" name="date" style="width: 600px;"/>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="address">Permanent Address</label>
+    <input type="text" id="address" name="address" placeholder="Enter permanent address" style="width: 800px;"/>
+  </div>
+  </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="village">Village</label>
+        <input type="text" id="village" name="village" placeholder="Enter village" style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="thana">Thana</label>
+        <input type="text" id="thana" name="thana" placeholder="Enter thana" style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="subdivision">Sub-division</label>
+        <input type="text" id="subdivision" name="subdivision" placeholder="Enter subdivision" style="width: 300px;"/>
+      </div>
+    </div>
+
+      <div class="form-row">
+      <div class="form-group">
+        <label for="postoffice">Post office</label>
+        <input type="text" id="postoffice" name="postoffice" placeholder="Enter postoffice" style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="district">District</label>
+        <input type="text" id="district" name="district" placeholder="Enter district" style="width: 300px;"/>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter state" style="width: 300px;"/>
+      </div>
+    </div>
+
+      <div class="form-row">
+        <div class="form-group">
+        <label for="Place">Place</label>
+        <input type="text" id="Place" name="Place" placeholder="Enter place" style="width: 400px;"/>
+      </div>
+      <div class="form-group">
+          <label for="date">Date<span class="file-note">(DD/MM/YYYY)</span><span class="required">*</span></label>
+          <input type="date" id="date" name="date" required placeholder="DD/MM/YYYY" style="width: 400px;"/>
+      </div>
+      </div>
+
+    <div class="form-row">
+    <div class="form-group">
+      <label for="photoUpload1">Signature of Employee<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+      <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+</div>
+<br>
+<br>
+<center><h3>Declaration By Witnesses</h3></center>
+<br><br>
+
+    <div class="form-row">
+        <div class="form-group">
+        <label for="name">1. Name of witness</label>
+        <input type="text" id="name" name="name" placeholder="Enter name of witness" style="width: 400px;"/>
+      </div>
+    <div class="form-group">
+      <label for="photoUpload1">Signature of Witness<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+      <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+</div>
+
+    <div class="form-row">
+        <div class="form-group">
+        <label for="name">2. Name of witness</label>
+        <input type="text" id="name" name="name" placeholder="Enter name of witness" style="width: 400px;"/>
+      </div>
+    <div class="form-group">
+      <label for="photoUpload1">Signature of Witness<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+      <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+</div>
+<br>
+<br>
+<center><h3>Acknowledgement by the employee</h3></center>
+<br><br>
+<p>Received the duplicate copy of nomination in Form 'F' filed by me and duly certified by the employer.</p>
+<br>
+<div class="form-row">
+<div class="form-group">
+          <label for="date">Date<span class="file-note">(DD/MM/YYYY)</span><span class="required">*</span></label>
+          <input type="date" id="date" name="date" required placeholder="DD/MM/YYYY" style="width: 400px;"/>
+      </div>
+    <div class="form-group">
+      <label for="photoUpload1">Signature of Employee<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+      <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+</div>
+</div>
+
+<div class="form-buttons">
+  <a href="newform.html">
+    <button type="button" class="back-btn">Back</button>
+  </a>
+  <a href="medical.html">
+  <button type="submit" class="submit-btn">Save and Next</button>
+  </a>
+</div>
+
+  <script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent default form behavior
+
+    // Optional: Validate and send data using fetch()
+
+    // Then redirect
+    window.location.href = 'medical.html';
+  });
+</script>
+</form>
+    </body>
+</html>

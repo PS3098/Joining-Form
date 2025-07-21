@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joining Form</title>
+  <link rel="stylesheet" href="new.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="icon" title="Home"><i class="fa-solid fa-house"></i></span>
+    </div>
+    <div class="navbar-center">
+      <h2>Joining Form</h2>
+    </div>
+    <div class="navbar-right">
+    
+    </div>
+  </div>
+
+  <!-- Form Section -->
+<div class="form-section">
+  <h3>New Form No. 11 - Declaration Form</h3><br>
+  <form  method="POST">
+
+    <center>
+    <h3><div class="sub-heading">Employees' Provident Fund Organization</div></h3>
+    <p>Emplyees' Provident Funds Scheme, 1952 (Paragraph 34 & 57) &<br>
+        Employees' Pension Scheme, 1995 (Paragraph 24)<br>
+        (Declaration by a person taking up employment in any establishment on which EPF Scheme, 1952 and /or EPS, 1995 is applicable)
+    </p><br><br>
+    </center>
+
+    <div class="form-row">
+        <div class="form-group">
+          <label for="Name">Name of the member <span class="required">*</span></label>
+          <input type="text" id="Name" name="Name" placeholder="Enter member name" required/>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <label>
+        <input type="checkbox" name="father"> Father's Name </label>
+    <label>
+      <input type="checkbox" name="spouse"> Spouse's Name </label>
+      <br><br>
+    <input type="text" id="Name" name="Name" placeholder="Enter name" style="height: 40px; width: 500px" required />
+</div>
+<div class="form-row">
+<div class="form-group">
+        <label for="dob">Date of Birth <span class="file-note">(DD/MM/YYYY)</span><span class="required">*</span></label>
+        <input type="date" id="dob" name="dob" required placeholder="DD/MM/YYYY" style="width: 300px"/>
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+<div class="form-group">
+    <label for="maritalStatus">Marital Status</label>
+    <select id="maritalStatus" name="maritalStatus">
+      <option value="">Select Marital Status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>
+    </select>
+  </div>
+</div>
+
+    <!-- Row 4: Email ID -->
+    <div class="form-row ">
+        <div class="form-group">
+      <label for="email">Email ID<span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+    </div>
+
+    <!-- Row 5: Hobbies -->
+    <div class="form-group">
+        <label for="mobileNumber">Mobile Number<span class="required">*</span></label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter mobile number" />
+    </div>
+</div>
+<br>
+
+<div class="form-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+  <!-- Statement on the left -->
+  <div class="form-statement" style="max-width: 75%;">
+    <label>
+      a) Whether earlier a member of Employees' Provident Fund Scheme, 1952
+    </label>
+  </div>
+
+  <!-- Yes/No radio buttons on the right -->
+  <div class="form-options" style="display: flex; gap: 10px; align-items: center;">
+    <label><input type="radio" name="statement1" value="yes" required> Yes</label>
+    <label><input type="radio" name="statement1" value="no"> No</label>
+  </div>
+</div>
+
+<div class="form-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+  <!-- Statement on the left -->
+  <div class="form-statement" style="max-width: 75%;">
+    <label>
+      b) Whether earlier a member of Employees' Pension Scheme, 1995
+    </label>
+  </div>
+
+  <!-- Yes/No radio buttons on the right -->
+  <div class="form-options" style="display: flex; gap: 10px; align-items: center;">
+    <label><input type="radio" name="statement2" value="yes" required> Yes</label>
+    <label><input type="radio" name="statement2" value="no"> No</label>
+  </div>
+</div>
+
+<br>
+<div class="form-section">
+<h3>Previous emplyement details:</h3><h4>[if YES to a) and/or b) above]</h4><br>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="accountNumber">Universal Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter account number" />
+    </div>
+
+    <div class="form-group">
+      <label for="ifscCode">Previous PF Account Number</label>
+      <input type="text" id="ifscCode" name="ifscCode" placeholder="Enter IFSC code" />
+    </div>
+        <div class="form-group">
+      <label for="date">Date of exit from previous employment</label>
+      <input type="date" id="date" name="dateofexit" />
+    </div>
+  </div>
+
+    <div class="form-row">
+    <div class="form-group">
+      <label for="certificate">Scheme Certificate No. (if issued)</label>
+      <input type="text" id="certificateNo" name="certificateNo" placeholder="Enter scheme certificate no." />
+    </div>
+
+    <div class="form-group">
+      <label for="PPO">Pension Pyment Order(PPO) No. (if issued)</label>
+      <input type="text" id="PPO" name="PPO" placeholder="Enter IFSC code" />
+    </div>
+  </div>
+  <br>
+  <div class="form-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+  <!-- Statement on the left -->
+  <div class="form-statement" style="max-width: 75%;">
+    <label>
+      International Worker:
+    </label>
+     <br>
+  </div>
+ 
+
+  <div class="form-options" style="display: flex; gap: 10px; align-items: center;">
+    <label><input type="radio" name="statement1" value="yes" required> Yes</label>
+    <label><input type="radio" name="statement1" value="no"> No</label>
+  </div>
+</div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="country">If YES, state country of origin</label>
+      <input type="text" id="country" name="country" placeholder="Enter country name" />
+    </div>
+
+    <div class="form-group">
+      <label for="Passport">Passport Number</label>
+      <input type="text" id="Passport" name="Passport" placeholder="Enter Passport Number" />
+    </div>
+  </div>
+
+     <div class="form-row ">
+        <div class="form-group">
+      <label for="date">Validity of Passport</label>
+      <label for="from">From:</label>
+      <input type="date" id="issuedate" name="issuedate" />
+      <br>
+      <div class="form-group">
+      <label for="from">To:</label>
+      <input type="date" id="expirydate" name="expirydate" />
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="form-section">
+  <h3>KYC Details</h3><h4>(attach self attested copies of following KYCs)</h4><br>
+    <div class="form-row">
+    <div class="form-group">
+      <label for="photoUpload1">Bank Account No. & IFSC Code<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+      <input type="file" id="photoUpload1" name="photoUpload1" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+    <div class="form-group">
+    <label for="photoUpload2">Aadhar Number<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+    <input type="file" id="photoUpload2" name="photoUpload2" accept=".pdf, .jpg, .jpeg, .png" style="width: 50%"/>
+    </div>
+</div>
+    <div class="form-row">
+    <div class="form-group">
+    <label for="photoUpload3">Permanent Address Number (PAN), if available<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+    <input type="file" id="photoUpload3" name="photoUpload3" accept=".pdf, .jpg, .jpeg, .png" style="width: 40%"/>
+    </div>
+</div>
+</div>
+
+    <center>
+        <h3><div class="sub-heading">Undertaking</div></h3>
+        <br>
+    </center>
+        <div class="form-group">
+        <label for="statements"><ol>
+        <li>Certified that the particulars are true to the best of my knowledge.</li>
+        <li>I authorize EPFO to use my Aadhar for verification/authentication/eKYC purpose for service delivery.</li>
+        <li>Kindly transfer the funds and service details, if applicable, from the previous PF account as declared above to the present P.F. Account.
+            (Tranfer would be only possible if the identified KYC detail approved by previous employer has been verified by present employer using his Digital Signature Certificate)</li>
+        <li>In case of changes in above details, the same will be intimated to employer at the earliest.</li>
+        </ol>
+    </div> 
+
+    <br>
+   <div class="form-row">
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" id="Date" name="date" style="width: 200px" />
+    </div>
+    <div class="form-group">
+      <label for="Place">Place</label>
+      <input type="text" id="Place" name="Place" style="width: 300px" placeholder="Enter place" />
+    </div>
+    </div> 
+
+    <div class="form-row">
+    <div class="form-group">
+    <label for="signUpload4">Signature<span class="file-note">(PDF, JPEG, PNG)</span><span class="required" >*</span></label>
+    <input type="file" id="signUpload4" name="signUpload4" accept=".pdf, .jpg, .jpeg, .png" style="width: 40%"/>
+    </div>
+</div>
+    <br>
+
+</div>
+
+ <div class="form-buttons">
+  <a href="declaration.html">
+    <button type="button" class="back-btn">Back</button>
+  </a>
+  <button type="submit" class="submit-btn">Save and Next</button>
+</div>
+
+<script>
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); // prevent default form behavior
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  fetch("http://localhost:8080/api/employees", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    // Redirect to next page after successful save
+    window.location.href = 'Payment_of_Gratuity.html';
+  })
+  .catch(error => alert("Error saving form: " + error));
+});
+</script>
+</form>
+</body>
+</html>
